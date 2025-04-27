@@ -5,7 +5,11 @@ use tauri_specta::{Builder, ErrorHandlingMode, collect_commands};
 pub fn collect() -> Builder {
   let builder = Builder::<Wry>::new()
     .error_handling(ErrorHandlingMode::Throw)
-    .commands(collect_commands![command::show_window]);
+    .commands(collect_commands![
+      command::is_desktop,
+      command::is_mobile,
+      command::show_window
+    ]);
 
   #[cfg(debug_assertions)]
   export(&builder);

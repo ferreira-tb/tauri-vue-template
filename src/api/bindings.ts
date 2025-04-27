@@ -4,6 +4,12 @@
 /** user-defined commands **/
 
 export const commands = {
+  async isDesktop(): Promise<boolean> {
+    return await TAURI_INVOKE('is_desktop');
+  },
+  async isMobile(): Promise<boolean> {
+    return await TAURI_INVOKE('is_mobile');
+  },
   async showWindow(): Promise<null> {
     return await TAURI_INVOKE('show_window');
   },

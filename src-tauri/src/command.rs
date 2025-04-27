@@ -3,6 +3,18 @@ use crate::error::CResult;
 #[cfg(desktop)]
 use tauri::WebviewWindow;
 
+#[tauri::command]
+#[specta::specta]
+pub async fn is_desktop() -> bool {
+  cfg!(desktop)
+}
+
+#[tauri::command]
+#[specta::specta]
+pub async fn is_mobile() -> bool {
+  cfg!(mobile)
+}
+
 #[cfg(desktop)]
 #[tauri::command]
 #[specta::specta]
