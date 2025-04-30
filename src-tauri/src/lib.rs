@@ -29,8 +29,8 @@ pub fn run() {
   let builder = tauri::Builder::default();
 
   builder
-    .plugin(tauri_plugin_dialog::init())
     .plugin(tauri_plugin_fs::init())
+    .plugin(tauri_plugin_dialog::init())
     .plugin(tauri_plugin_persisted_scope::init())
     .setup(|app| setup(app.app_handle()))
     .invoke_handler(specta.invoke_handler())
