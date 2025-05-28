@@ -2,7 +2,7 @@ use anyhow::Result;
 use tauri::{AppHandle, WebviewUrl, WebviewWindowBuilder};
 
 #[cfg(desktop)]
-use tauri::{Manager, WebviewWindow, Window, Wry};
+use tauri::{Manager, WebviewWindow, Wry};
 
 #[cfg(desktop)]
 pub trait WindowExt: Manager<Wry> {
@@ -12,11 +12,7 @@ pub trait WindowExt: Manager<Wry> {
 }
 
 #[cfg(desktop)]
-impl WindowExt for AppHandle<Wry> {}
-#[cfg(desktop)]
-impl WindowExt for WebviewWindow<Wry> {}
-#[cfg(desktop)]
-impl WindowExt for Window<Wry> {}
+impl<T: Manager<Wry>> WindowExt for T {}
 
 #[cfg(desktop)]
 pub fn open(app: &AppHandle) -> Result<()> {

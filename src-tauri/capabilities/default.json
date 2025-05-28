@@ -2,5 +2,11 @@
   "identifier": "default",
   "description": "Default capabilities",
   "windows": ["*"],
-  "permissions": ["core:event:default", "dialog:default", "pinia:default", "process:allow-exit"]
+  "permissions": [
+    "core:event:default",
+    "dialog:default",
+    "pinia:default",
+    "process:allow-exit",
+    "vue:default"
+  ]
 }

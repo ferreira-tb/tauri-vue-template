@@ -22,9 +22,10 @@ futures = "0.3"
 itertools = "0.14"
 specta-typescript = "=0.0.9"
 tauri-plugin-dialog = "2.2"
-tauri-plugin-fs = "2.2"
+tauri-plugin-fs = "2.3"
 tauri-plugin-persisted-scope = "2.2"
-tauri-plugin-pinia = "3.4"
+tauri-plugin-pinia = "3.6"
+tauri-plugin-vue = "0.1"
 
 [dependencies.serde]
 version = "1.0"
@@ -52,7 +53,7 @@ tauri-plugin-single-instance = "2.2"
 tauri-plugin-window-state = "2.2"
 
 [target."cfg(windows)".dependencies.tauri-plugin-prevent-default]
-version = "2.0"
+version = "2.1"
 features = ["unstable-windows"]
 
 [build-dependencies.tauri-build]
