@@ -16,11 +16,13 @@ useColorMode({
 
 onKeyDown('Escape', () => exit(0).err());
 
-onMounted(() => {
-  // prettier-ignore
-  counterStore.$tauri.start()
-    .then(() => commands.showWindow())
-    .err()
+onMounted(async () => {
+  try {
+    await counterStore.$tauri.start();
+    await commands.showWindow();
+  } catch (err) {
+    handleError(err);
+  }
 });
 </script>
 

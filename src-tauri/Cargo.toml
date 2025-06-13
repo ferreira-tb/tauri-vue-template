@@ -24,8 +24,8 @@ specta-typescript = "=0.0.9"
 tauri-plugin-dialog = "2.2"
 tauri-plugin-fs = "2.3"
 tauri-plugin-persisted-scope = "2.2"
-tauri-plugin-pinia = "3.6"
-tauri-plugin-vue = "0.1"
+tauri-plugin-pinia = "3.7"
+tauri-plugin-vue = "0.3"
 
 [dependencies.serde]
 version = "1.0"
