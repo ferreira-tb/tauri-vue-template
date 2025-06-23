@@ -6,7 +6,8 @@
     "beforeDevCommand": "pnpm run vite:dev",
     "beforeBuildCommand": "pnpm run vite:build",
     "frontendDist": "../dist",
-    "devUrl": "http://localhost:1420"
+    "devUrl": "http://localhost:1420",
+    "removeUnusedCommands": true
   },
   "app": {
     "withGlobalTauri": false,
@@ -24,6 +25,10 @@
     }
   },
   "bundle": {
+    "publisher": "Publisher",
+    "shortDescription": "Description",
+    "license": "MIT",
+    "licenseFile": "../LICENSE",
     "active": true,
     "targets": "all",
     "icon": [

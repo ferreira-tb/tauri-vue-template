@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { commands } from '@/api/bindings';
+import { showWindow } from '@/commands';
 import { useColorMode } from '@vueuse/core';
 import { exit } from '@tauri-apps/plugin-process';
-import { useCounterStore } from '@/stores/counter';
 import { handleError, onKeyDown } from '@tb-dev/vue';
-
-const counterStore = useCounterStore();
 
 useColorMode({
   initialValue: 'dark',
@@ -18,8 +15,7 @@ onKeyDown('Escape', () => exit(0).err());
 
 onMounted(async () => {
   try {
-    await counterStore.$tauri.start();
-    await commands.showWindow();
+    await showWindow();
   } catch (err) {
     handleError(err);
   }

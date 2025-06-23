@@ -1,6 +1,5 @@
-#![feature(let_chains, try_blocks)]
+#![feature(try_blocks)]
 
-mod api;
 mod command;
 mod error;
 mod window;
@@ -13,8 +12,6 @@ use tauri::{AppHandle, Manager};
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-  let specta = api::collect();
-
   #[cfg(desktop)]
   let builder = {
     tauri::Builder::default()
@@ -34,7 +31,11 @@ pub fn run() {
     .plugin(tauri_plugin_pinia::init())
     .plugin(tauri_plugin_vue::init())
     .setup(|app| setup(app.app_handle()))
-    .invoke_handler(specta.invoke_handler())
+    .invoke_handler(tauri::generate_handler![
+      command::is_desktop,
+      command::is_mobile,
+      command::show_window
+    ])
     .run(tauri::generate_context!())
     .expect("failed to start tauri app");
 }

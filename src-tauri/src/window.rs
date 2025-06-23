@@ -18,7 +18,7 @@ impl<T: Manager<Wry>> WindowExt for T {}
 pub fn open(app: &AppHandle) -> Result<()> {
   WebviewWindowBuilder::new(app, "main", url())
     .title("tauri-vue-template")
-    .inner_size(800.0, 600.0)
+    .inner_size(1200.0, 800.0)
     .resizable(true)
     .maximizable(true)
     .minimizable(true)

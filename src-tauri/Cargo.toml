@@ -20,7 +20,6 @@ workspace = true
 anyhow = "1.0"
 futures = "0.3"
 itertools = "0.14"
-specta-typescript = "=0.0.9"
 tauri-plugin-dialog = "2.2"
 tauri-plugin-fs = "2.3"
 tauri-plugin-persisted-scope = "2.2"
@@ -31,17 +30,9 @@ tauri-plugin-vue = "0.3"
 version = "1.0"
 features = ["derive"]
 
-[dependencies.specta]
-version = "=2.0.0-rc.22"
-features = ["serde", "serde_json"]
-
 [dependencies.tauri]
 version = "2.5"
 features = ["protocol-asset", "rustls-tls"]
-
-[dependencies.tauri-specta]
-version = "=2.0.0-rc.21"
-features = ["derive", "typescript"]
 
 [dependencies.tokio]
 version = "1.45"
