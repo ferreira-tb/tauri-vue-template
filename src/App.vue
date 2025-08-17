@@ -2,6 +2,7 @@
 import { onMounted } from 'vue';
 import { showWindow } from '@/commands';
 import { useColorMode } from '@vueuse/core';
+import { Sonner } from '@tb-dev/vue-components';
 import { exit } from '@tauri-apps/plugin-process';
 import { handleError, onKeyDown } from '@tb-dev/vue';
 
@@ -13,18 +14,13 @@ useColorMode({
 
 onKeyDown('Escape', () => exit(0).err());
 
-onMounted(async () => {
-  try {
-    await showWindow();
-  } catch (err) {
-    handleError(err);
-  }
-});
+onMounted(() => showWindow().err());
 </script>
 
 <template>
-  <main class="h-screen w-screen select-none">
-    <div class="size-full overflow-hidden p-0">
+  <main class="fixed inset-0 select-none">
+    <Sonner />
+    <div class="relative size-full overflow-hidden">
       <RouterView #default="{ Component }">
         <template v-if="Component">
           <component :is="Component" />

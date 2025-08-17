@@ -11,6 +11,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('src', import.meta.url)),
     },
   },
+  build: {
+    outDir: 'dist',
+    copyPublicDir: true,
+    emptyOutDir: true,
+    minify: true,
+    target: 'baseline-widely-available',
+    sourcemap: Boolean(env.TAURI_ENV_DEBUG),
+  },
   server: {
     port: 1420,
     strictPort: true,
@@ -18,11 +26,5 @@ export default defineConfig({
     watch: {
       ignored: ['**/src-tauri/**'],
     },
-  },
-  build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-    minify: true,
-    target: 'esnext',
   },
 });

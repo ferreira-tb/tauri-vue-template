@@ -1,4 +1,6 @@
-import '@/assets/index.css';
+import 'vue-sonner/style.css';
+import '@/assets/style/base.css';
+import '@/assets/style/main.css';
 import '@tb-dev/vue-components/style';
 import '@/lib/prototype';
 import App from '@/App.vue';
@@ -16,7 +18,7 @@ pinia.use(
   TauriPluginPinia({
     autoStart: true,
     saveOnChange: true,
-  })
+  }),
 );
 
 setCurrentApp(app);
@@ -25,7 +27,6 @@ setErrorHandler(onError, app);
 app.use(router);
 app.use(pinia);
 
-// prettier-ignore
 void router
   .push({ name: 'home' satisfies Route })
   .then(() => app.mount('#app'));

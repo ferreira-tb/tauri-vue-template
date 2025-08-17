@@ -1,36 +1,27 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-pnpm-debug.log*
-
-# Editor
-.idea/*
+# Editor directories and files
+**/.idea
 .vscode/*
 !.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
 
-# NPM
+# Rust
+debug
+target
+rustc-ice-*.txt
+
+# Node
 **/node_modules
 **/dist
 
-# Rust
-debug/
-target/
-**/*.rs.bk
-*.pdb
-rustc-ice-*.txt
-
 # Tauri
-**/gen
+**/gen/schemas
 
 # Others
-.temp/
-**/*vite*timestamp*
-**/.vitepress/temp
-**/.vitepress/cache
-.eslintcache
+**/.DS_Store
+**/.Thumbs.db
+**/.eslintcache
+**/.temp
 
-workspace.md
+**/*.jks

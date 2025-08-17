@@ -4,12 +4,14 @@ members = ["src-tauri"]
 
 [workspace.package]
 edition = "2024"
-rust-version = "1.88"
+rust-version = "1.91"
+license-file = "./LICENSE"
 
 [profile.release]
 codegen-units = 1
-lto = "thin"
+lto = "fat"
 opt-level = 3
+panic = "abort"
 strip = "symbols"
 
 [profile.preview]
