@@ -31,16 +31,16 @@ pub fn run() {
     .plugin(tauri_plugin_pinia::init())
     .plugin(tauri_plugin_vue::init())
     .setup(|app| setup(app.app_handle()))
-    .invoke_handler(tauri::generate_handler![
-      command::is_desktop,
-      command::is_mobile,
-      command::show_window
-    ])
+    .invoke_handler(tauri::generate_handler![command::show_window])
     .run(tauri::generate_context!())
     .expect("failed to start tauri app");
 }
 
 fn setup(app: &AppHandle) -> BoxResult<()> {
-  window::open(app)?;
+  #[cfg(desktop)]
+  window::desktop::open(app)?;
+  #[cfg(mobile)]
+  window::mobile::open(app)?;
+
   Ok(())
 }

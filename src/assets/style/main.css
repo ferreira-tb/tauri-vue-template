@@ -9,11 +9,7 @@ body {
 }
 
 button {
-  @apply cursor-pointer;
-}
-
-button[data-slot="tabs-trigger"] {
-  @apply border-0!;
+  @apply cursor-pointer select-none;
 }
 
 label:has(select),

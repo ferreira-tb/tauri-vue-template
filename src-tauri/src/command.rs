@@ -3,16 +3,6 @@ use crate::error::CResult;
 #[cfg(desktop)]
 use tauri::WebviewWindow;
 
-#[tauri::command]
-pub async fn is_desktop() -> bool {
-  cfg!(desktop)
-}
-
-#[tauri::command]
-pub async fn is_mobile() -> bool {
-  cfg!(mobile)
-}
-
 #[cfg(desktop)]
 #[tauri::command]
 pub async fn show_window(window: WebviewWindow) -> CResult<()> {

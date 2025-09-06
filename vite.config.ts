@@ -1,3 +1,4 @@
+import { env } from 'node:process';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import tailwind from '@tailwindcss/vite';
@@ -16,13 +17,13 @@ export default defineConfig({
     copyPublicDir: true,
     emptyOutDir: true,
     minify: true,
-    target: 'baseline-widely-available',
+    target: 'esnext',
     sourcemap: Boolean(env.TAURI_ENV_DEBUG),
   },
   server: {
     port: 1420,
     strictPort: true,
-    host: process.env.TAURI_DEV_HOST ?? false,
+    host: env.TAURI_DEV_HOST ?? false,
     watch: {
       ignored: ['**/src-tauri/**'],
     },

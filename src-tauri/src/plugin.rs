@@ -1,4 +1,4 @@
-use crate::window::WindowExt;
+use crate::window::desktop::WindowExt;
 use anyhow::Result;
 use tauri::Wry;
 use tauri::plugin::TauriPlugin;
