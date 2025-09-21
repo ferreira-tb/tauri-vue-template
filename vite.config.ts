@@ -5,7 +5,10 @@ import tailwind from '@tailwindcss/vite';
 import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
-  plugins: [vue(), tailwind()],
+  plugins: [
+    tailwind(),
+    vue({ features: { optionsAPI: false } }),
+  ],
   clearScreen: false,
   resolve: {
     alias: {

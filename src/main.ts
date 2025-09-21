@@ -1,7 +1,6 @@
 import 'vue-sonner/style.css';
 import '@/assets/style/base.css';
 import '@/assets/style/main.css';
-import '@tb-dev/vue-components/style';
 import '@/lib/prototype';
 import App from '@/App.vue';
 import { createApp } from 'vue';

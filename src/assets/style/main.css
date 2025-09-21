@@ -12,6 +12,10 @@ button {
   @apply cursor-pointer select-none;
 }
 
+button[data-slot="tabs-trigger"] {
+  @apply border-0!;
+}
+
 label:has(select),
 label:has(textarea),
 label:has(button[role="combobox"]),

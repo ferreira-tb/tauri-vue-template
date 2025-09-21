@@ -19,6 +19,7 @@ pub fn run() {
       .plugin(plugin::single_instance())
       .plugin(plugin::window_state())
       .plugin(tauri_plugin_process::init())
+      .plugin(tauri_plugin_updater::Builder::new().build())
   };
 
   #[cfg(mobile)]

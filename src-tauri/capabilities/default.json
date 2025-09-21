@@ -8,6 +8,11 @@
     "core:event:allow-unlisten",
     "pinia:default",
     "process:allow-exit",
+    "process:allow-restart",
+    "updater:allow-check",
+    "updater:allow-download",
+    "updater:allow-download-and-install",
+    "updater:allow-install",
     "vue:default"
   ]
 }

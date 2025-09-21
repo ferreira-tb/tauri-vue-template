@@ -1,5 +1,6 @@
 {
-  "include": ["src/**/*", "src/**/*.vue", "vite.config.ts"],
+  "include": ["src/**/*", "src/**/*.vue", "**/*.config.ts"],
+
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -35,5 +36,10 @@
     "forceConsistentCasingInFileNames": true,
     "noEmitOnError": true,
     "types": ["@tauri-store/pinia", "vite/client"]
+  },
+
+  "vueCompilerOptions": {
+    "checkUnknownComponents": true,
+    "checkUnknownDirectives": true
   }
 }

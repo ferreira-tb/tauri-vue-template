@@ -24,4 +24,5 @@ rustc-ice-*.txt
 **/.eslintcache
 **/.temp
 
+**/*.db
 **/*.jks
