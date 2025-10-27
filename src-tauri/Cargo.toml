@@ -33,11 +33,11 @@ version = "1.0"
 features = ["derive"]
 
 [dependencies.tauri]
-version = "2.8"
+version = "2.9"
 features = ["protocol-asset", "rustls-tls"]
 
 [dependencies.tokio]
-version = "1.47"
+version = "1.48"
 features = ["full"]
 
 [target."cfg(windows)".dependencies]
@@ -50,5 +50,5 @@ version = "3"
 features = ["platform-windows"]
 
 [build-dependencies.tauri-build]
-version = "2.4"
+version = "2.5"
 features = []
