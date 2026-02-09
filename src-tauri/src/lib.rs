@@ -30,7 +30,6 @@ pub fn run() {
     .plugin(tauri_plugin_dialog::init())
     .plugin(tauri_plugin_persisted_scope::init())
     .plugin(tauri_plugin_pinia::init())
-    .plugin(tauri_plugin_vue::init())
     .setup(|app| setup(app.app_handle()))
     .invoke_handler(tauri::generate_handler![command::show_window])
     .run(tauri::generate_context!())

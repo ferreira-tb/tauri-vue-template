@@ -26,6 +26,4 @@ setErrorHandler(onError, app);
 app.use(router);
 app.use(pinia);
 
-void router
-  .push({ name: 'home' satisfies Route })
-  .then(() => app.mount('#app'));
+app.mount('#app');

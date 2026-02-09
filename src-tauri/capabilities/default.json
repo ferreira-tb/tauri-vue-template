@@ -12,7 +12,6 @@
     "updater:allow-check",
     "updater:allow-download",
     "updater:allow-download-and-install",
-    "updater:allow-install",
-    "vue:default"
+    "updater:allow-install"
   ]
 }

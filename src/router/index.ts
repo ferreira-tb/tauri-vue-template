@@ -1,7 +1,7 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 export const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes: [
     {
       component: () => import('@/views/home/index.vue'),
@@ -12,5 +12,5 @@ export const router = createRouter({
 });
 
 export function go(to: Route) {
-  void router.push({ name: to });
+  return router.push({ name: to });
 }
