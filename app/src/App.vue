@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { showWindow } from '@/commands';
+import { commands } from '@/lib/bindings';
 import { useColorMode } from '@vueuse/core';
 import Loading from '@/components/Loading.vue';
 import { Sonner } from '@tb-dev/vue-components';
@@ -17,7 +17,7 @@ useColorMode({
 
 onKeyDown('Escape', () => exit(0).err());
 
-onMounted(() => showWindow().err());
+onMounted(() => commands.showWindow().err());
 </script>
 
 <template>
