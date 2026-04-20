@@ -1,26 +1,82 @@
 [workspace]
 resolver = "3"
-members = ["src-tauri"]
+members = ["app/src-tauri"]
 
 [workspace.package]
+version = "0.1.0"
 edition = "2024"
-rust-version = "1.95"
-license-file = "./LICENSE"
+rust-version = "1.97"
+license = "GPL-3.0-only"
 
 [profile.release]
 codegen-units = 1
 lto = "fat"
 opt-level = 3
-strip = "symbols"
 panic = "abort"
+strip = "symbols"
 
 [profile.preview]
 inherits = "release"
+incremental = true
 codegen-units = 16
 lto = "off"
 opt-level = 0
 debug = true
 debug-assertions = true
+
+[workspace.dependencies]
+anyhow = "1.0"
+bon = "3.9"
+futures = "0.3"
+itertools = "0.14"
+serde_json = "1.0"
+specta-typescript = "=0.0.9"
+tap = "=1.0.1"
+tauri-plugin-clipboard-manager = "2.3"
+tauri-plugin-dialog = "2.7"
+tauri-plugin-fs = "2.5"
+tauri-plugin-opener = "2.5"
+tauri-plugin-os = "2.3"
+tauri-plugin-persisted-scope = "2.3"
+tauri-plugin-process = "2.3"
+tauri-plugin-single-instance = "2.4"
+thiserror = "2.0"
+
+[workspace.dependencies.derive_more]
+version = "2.1"
+features = ["deref", "deref_mut", "display", "from", "into"]
+
+[workspace.dependencies.jiff]
+version = "0.2"
+features = ["serde"]
+
+[workspace.dependencies.serde]
+version = "1.0"
+features = ["derive"]
+
+[workspace.dependencies.specta]
+version = "=2.0.0-rc.22"
+features = ["serde", "serde_json"]
+
+[workspace.dependencies.strum]
+version = "0.28"
+features = ["derive"]
+
+[workspace.dependencies.tauri-plugin-pinia]
+version = "4.2"
+features = ["preserve-order"]
+
+[workspace.dependencies.tauri-plugin-prevent-default]
+version = "5"
+features = ["platform-windows"]
+
+[workspace.dependencies.tauri-specta]
+version = "=2.0.0-rc.21"
+features = ["derive", "typescript"]
+
+[workspace.dependencies.tokio]
+version = "1.52"
+features = ["full"]
 
 [workspace.lints.rust]
 async_fn_in_trait = "allow"
@@ -33,7 +89,7 @@ variant_size_differences = "warn"
 clone_on_ref_ptr = "deny"
 dbg_macro = "deny"
 enum_glob_use = "allow"
-filetype_is_file = "deny"
+filetype_is_file = "allow"
 get_unwrap = "deny"
 large_enum_variant = "deny"
 map_unwrap_or = "allow"
@@ -45,6 +101,7 @@ module_name_repetitions = "allow"
 must_use_candidate = "allow"
 needless_borrow = "deny"
 needless_for_each = "allow"
+obfuscated_if_else = "allow"
 rc_buffer = "deny"
 rc_mutex = "deny"
 rest_pat_in_fully_bound_structs = "deny"

@@ -1,0 +1,5 @@
+[bump]
+exclude = []
+
+[update]
+exclude = ["specta", "specta-typescript", "tauri-specta"]

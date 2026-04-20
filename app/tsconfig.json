@@ -1,7 +1,10 @@
 {
-  "include": ["**/*.config.ts", "**/*.mts"],
+  "include": ["src/**/*.ts", "src/**/*.vue"],
   "compilerOptions": {
-    "lib": ["esnext"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "lib": ["esnext", "dom"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
@@ -10,6 +13,7 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
     "declaration": false,
+    "experimentalDecorators": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
@@ -28,6 +32,11 @@
     "forceConsistentCasingInFileNames": true,
     "noEmitOnError": true,
 
-    "types": ["node", "vite/client"]
+    "types": ["@tauri-store/pinia"]
+  },
+
+  "vueCompilerOptions": {
+    "checkUnknownComponents": true,
+    "checkUnknownDirectives": true
   }
 }
