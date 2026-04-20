@@ -52,7 +52,8 @@
     "**/schemas",
     "**/LICENSE",
     "**/*-lock.yaml",
-    "**/*.xml"
+    "**/*.xml",
+    "**/bindings.ts"
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.15.wasm",
